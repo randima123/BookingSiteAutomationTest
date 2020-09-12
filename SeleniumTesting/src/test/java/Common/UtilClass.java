@@ -15,7 +15,7 @@ public class UtilClass {
 
         File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
-        String screenShotPath = System.getProperty("user.dir")+ "/reports/screenshots/"+methodName+"-"+timeStamp+".png";
+        String screenShotPath = "./reports/screenshots/"+methodName+"-"+timeStamp+".png";
         try {
             FileUtils.copyFile(scrFile, new File(screenShotPath));
         } catch (IOException e) {
