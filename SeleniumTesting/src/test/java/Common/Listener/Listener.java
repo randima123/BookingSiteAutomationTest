@@ -39,7 +39,7 @@ public class Listener implements ITestListener {
         WebDriver driver = DriverProvider.getActiveDriver();
         String screenShotPath = UtilClass.getScreenShot(methodName, driver);
         try {
-            extentTest.get().addScreenCaptureFromPath(screenShotPath, methodName);
+            extentTest.get().addScreenCaptureFromPath("./screenshots/"+screenShotPath, methodName);
         } catch (IOException e) {
             e.printStackTrace();
         }
