@@ -13,23 +13,23 @@ import java.util.List;
 public class SearchTest extends BaseTest {
 
 
-//    @Test(dataProviderClass = CommonDataProvider.class, dataProvider = "excelData")
-//    public void searchDropDownLocationTest(String location, String ciYear, String ciMonth, String ciDate, String coYear, String coMonth, String coDate){
-//        HomePage homePage = HomePage.open();
-//        homePage.clearSearchDropdown();
-//        homePage.enterLettersForDropDown(location);
-//        boolean isVisible =homePage.checkVisibilityOfResults();
-//        Assert.assertTrue(isVisible,"Search elements not visible");
-//        List<String> searchResultList = homePage.getAllSearchResults();
-//        for(String element : searchResultList){
-//            if(element.contains(location)){
-//                Assert.assertTrue(true);
-//            }else{
-//                Assert.assertTrue(false, "incorrect search result for location: "+location);
-//            }
-//        }
-//    }
-//
+    @Test(dataProviderClass = CommonDataProvider.class, dataProvider = "excelData")
+    public void searchDropDownLocationTest(String location, String ciYear, String ciMonth, String ciDate, String coYear, String coMonth, String coDate){
+        HomePage homePage = HomePage.open();
+        homePage.clearSearchDropdown();
+        homePage.enterLettersForDropDown(location);
+        boolean isVisible =homePage.checkVisibilityOfResults();
+        Assert.assertTrue(isVisible,"Search elements not visible");
+        List<String> searchResultList = homePage.getAllSearchResults();
+        for(String element : searchResultList){
+            if(element.contains(location)){
+                Assert.assertTrue(true);
+            }else{
+                Assert.assertTrue(false, "incorrect search result for location: "+location);
+            }
+        }
+    }
+
     @Test
     public void validateAdultNumIncrease(){
         HomePage homePage = HomePage.open();
