@@ -1,6 +1,10 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="softwaretestingmaterial">
-	
+	<groups>
+		<run>
+			<include name="funcTest"/>
+		</run>
+	</groups>
 	<listeners>
 		<listener class-name="Common.Listener.Listener"></listener>
 	</listeners>
