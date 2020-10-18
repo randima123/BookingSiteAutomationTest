@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 import java.util.Hashtable;
 import java.util.List;
 
+@Test(groups = { "funcTest" })
 public class SearchTest extends BaseTest {
 
 
@@ -30,7 +31,7 @@ public class SearchTest extends BaseTest {
         }
     }
 
-    @Test
+    @Test(groups = {"searchNumTest"})
     public void validateAdultNumIncrease(){
         HomePage homePage = HomePage.open();
         homePage.clickOnGuestSpan();
@@ -41,7 +42,7 @@ public class SearchTest extends BaseTest {
         Assert.assertEquals(2+1, countAfterAdd);
     }
 
-    @Test
+    @Test(groups = {"searchNumTest"})
     public void validateChildNumIncrease(){
         HomePage homePage = HomePage.open();
         homePage.clickOnGuestSpan();
@@ -52,7 +53,7 @@ public class SearchTest extends BaseTest {
         Assert.assertEquals(0+1, countAfterAdd);
     }
 
-    @Test
+    @Test(groups = {"searchNumTest"})
     public void validateRoomNumIncrease(){
         HomePage homePage = HomePage.open();
         homePage.clickOnGuestSpan();
@@ -71,7 +72,6 @@ public class SearchTest extends BaseTest {
         homePage.clickDateDiv();
         homePage.selectDate(ciYear,ciMonth,ciDate);
         homePage.selectDate(coYear,coMonth,coDate);
-        int currentRoomCount = homePage.getRoomCountSpan();
         int currentChildCount = homePage.getChildCountSpan();
         int currentAdultCount = homePage.getAdultCountSpan();
         homePage.clickOnSearchButton();

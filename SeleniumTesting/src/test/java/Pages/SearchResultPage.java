@@ -169,6 +169,7 @@ public class SearchResultPage extends BasePageObject {
     }
 
     public void  selectFirstSearchOption(){
+        waitForVisibility(firstSearchOption);
         firstSearchOption.click();
     }
 
