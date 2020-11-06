@@ -29,7 +29,7 @@ public class SearchTest extends BaseTest {
     }
 
     @Test
-    public void validateAdultNumIncrease(){
+    public void validateAdultNumIncrease() {
         HomePage homePage = HomePage.open();
         homePage.clickOnGuestSpan();
         int currentAdultCount = homePage.getAdultCount();
@@ -40,7 +40,7 @@ public class SearchTest extends BaseTest {
     }
 
     @Test
-    public void validateChildNumIncrease(){
+    public void validateChildNumIncrease() {
         HomePage homePage = HomePage.open();
         homePage.clickOnGuestSpan();
         int currentChildCount = homePage.getChildCount();
@@ -51,7 +51,7 @@ public class SearchTest extends BaseTest {
     }
 
     @Test
-    public void validateRoomNumIncrease(){
+    public void validateRoomNumIncrease() {
         HomePage homePage = HomePage.open();
         homePage.clickOnGuestSpan();
         int currentRoomCount = homePage.getRoomCount();
@@ -101,9 +101,7 @@ public class SearchTest extends BaseTest {
         searchResultPage.selectDate(coYear,coMonth,coDate);
         boolean result =searchResultPage.verifyNumOfNights();
         Assert.assertTrue(result, "Number of nights stay value is calculated Incorrectly");
-
     }
-
 
     @Test(dataProviderClass = CommonDataProvider.class, dataProvider = "excelData")
     public void nightStayDisplayInSearchResult(String location, String ciYear, String ciMonth, String ciDate, String coYear, String coMonth, String coDate) throws InterruptedException {
@@ -124,5 +122,4 @@ public class SearchTest extends BaseTest {
         boolean result = searchResultPage.verifyNumDaysInSearchResults(numStayDaysFromText);
         Assert.assertTrue(result, "Search results show incorrect number of nights stay details");
     }
-
 }

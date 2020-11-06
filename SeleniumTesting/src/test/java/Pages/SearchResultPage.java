@@ -225,6 +225,9 @@ public class SearchResultPage extends BasePageObject {
         List<WebElement> resultList = searchResultList
                 .findElements(By.xpath("descendant::div[contains(@class,'bui-price-display ')]/div[1]/div"));
         for(WebElement element : resultList){
+            if(element.getText() == null || element.getText().trim().isEmpty()) {
+                continue;
+            }
             long numOfNights = Long.parseLong(element.getText().split(" ")[0]);
             if(numOfNights != numStayDaysFromText){
                 logger.info("Found wrong number of stay date: "+numOfNights);
