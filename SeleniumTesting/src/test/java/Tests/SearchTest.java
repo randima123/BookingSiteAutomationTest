@@ -3,16 +3,13 @@ package Tests;
 import Common.DataProvider.CommonDataProvider;
 import Pages.HomePage;
 import Pages.SearchResultPage;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.Hashtable;
 import java.util.List;
 
-@Test(groups = { "funcTest" })
+@Test
 public class SearchTest extends BaseTest {
-
 
     @Test(dataProviderClass = CommonDataProvider.class, dataProvider = "excelData")
     public void searchDropDownLocationTest(String location, String ciYear, String ciMonth, String ciDate, String coYear, String coMonth, String coDate){
@@ -31,7 +28,7 @@ public class SearchTest extends BaseTest {
         }
     }
 
-    @Test(groups = {"searchNumTest"})
+    @Test
     public void validateAdultNumIncrease(){
         HomePage homePage = HomePage.open();
         homePage.clickOnGuestSpan();
@@ -42,7 +39,7 @@ public class SearchTest extends BaseTest {
         Assert.assertEquals(2+1, countAfterAdd);
     }
 
-    @Test(groups = {"searchNumTest"})
+    @Test
     public void validateChildNumIncrease(){
         HomePage homePage = HomePage.open();
         homePage.clickOnGuestSpan();
@@ -53,7 +50,7 @@ public class SearchTest extends BaseTest {
         Assert.assertEquals(0+1, countAfterAdd);
     }
 
-    @Test(groups = {"searchNumTest"})
+    @Test
     public void validateRoomNumIncrease(){
         HomePage homePage = HomePage.open();
         homePage.clickOnGuestSpan();

@@ -1,13 +1,15 @@
 package Pages;
 
 import Common.DriverProvider.DriverProvider;
-import org.openqa.selenium.TimeoutException;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.apache.log4j.Logger;
+
 import java.util.List;
+
+import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
+import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfAllElements;
 
 public class BasePageObject {
 
@@ -22,25 +24,14 @@ public class BasePageObject {
     }
 
     protected boolean waitForVisibility(WebElement webElement){
-        try {
-            wait.until(ExpectedConditions.visibilityOf(webElement));
+
+            wait.until(visibilityOf(webElement));
             return true;
-        }catch (TimeoutException ex){
-            logger.error("Search results are not visible");
-            ex.printStackTrace();
-            return false;
-        }
 
     }
     protected boolean waitForVisibility(List<WebElement> webElementList){
-        try {
-            wait.until(ExpectedConditions.visibilityOfAllElements(webElementList));
+            wait.until(visibilityOfAllElements(webElementList));
             return true;
-        }catch (TimeoutException ex){
-            logger.error("Search results are not visible");
-            ex.printStackTrace();
-            return false;
-        }
 
     }
 
