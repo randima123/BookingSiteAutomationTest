@@ -9,7 +9,7 @@ public class CalendarTest extends BaseTest {
 
 
     @Test(priority = 1, dataProviderClass = CommonDataProvider.class, dataProvider = "excelData")
-    public void selectCheckInDateTest(String location, String ciYear, String ciMonth, String ciDate, String coYear, String coMonth, String coDate){
+    public void selectCheckInDateTest(String ciYear, String ciMonth, String ciDate){
         HomePage homePage = HomePage.open();
         homePage.clickDateDiv();
         String checkInYear=ciYear;
@@ -21,7 +21,7 @@ public class CalendarTest extends BaseTest {
     }
 
     @Test(priority = 2, dataProviderClass = CommonDataProvider.class, dataProvider = "excelData")
-    public void selectCheckOutDateTest(String location, String ciYear, String ciMonth, String ciDate, String coYear, String coMonth, String coDate) throws InterruptedException {
+    public void selectCheckOutDateTest(String coYear, String coMonth, String coDate) throws InterruptedException {
         HomePage homePage = HomePage.open();
         homePage.clickDateDiv();
         String checkOutYear=coYear;

@@ -12,7 +12,7 @@ import java.util.List;
 public class SearchTest extends BaseTest {
 
     @Test(dataProviderClass = CommonDataProvider.class, dataProvider = "excelData")
-    public void searchDropDownLocationTest(String location, String ciYear, String ciMonth, String ciDate, String coYear, String coMonth, String coDate){
+    public void searchDropDownLocationTest(String location){
         HomePage homePage = HomePage.open();
         homePage.clearSearchDropdown();
         homePage.enterLettersForDropDown(location);
